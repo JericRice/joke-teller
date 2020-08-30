@@ -19,8 +19,13 @@ const VoiceRSS={speech:function(e){this._validate(e),this._request(e)},_validate
 
 // test();
 
-// Get Jokes from API
+// Passing joke to voiceRSSA API
 
+function tellMe(joke) {
+     console.log('tell me:', joke);
+}
+
+// Get Jokes from API
 async function getJokes() {
     let joke = '';
     const apiUrl = 'https://sv443.net/jokeapi/v2/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist';
@@ -32,7 +37,7 @@ async function getJokes() {
         } else {
             joke = data.joke;
         } 
-        console.log(joke);
+        tellMe(joke);
     } catch (error) {
         // catch errors here
         console.log('whoops', error);
